@@ -14,8 +14,7 @@
         "doctrine/orm": ">=2.2.3,<2.4-dev",
         "doctrine/doctrine-bundle": "1.2.*",
         "stof/doctrine-extensions-bundle": "dev-master",
-        "symfony/monolog-bundle": "2.2.*",
-        "jms/di-extra-bundle": "1.3.*"
+        "symfony/monolog-bundle": "2.2.*"
     },
     "minimum-stability": "dev",
     "extra": {

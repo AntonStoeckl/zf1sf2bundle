@@ -9,6 +9,10 @@
         <parameter key="mvs_sample.productrepository.class">Mvs\SampleBundle\Repository\ProductRepository</parameter>
         <parameter key="mvs_sample.productrepository.name">MvsSampleBundle:Product</parameter>
         <parameter key="mvs_sample.productbizmodel.class">Mvs\SampleBundle\BizModel\Product</parameter>
+
+        <parameter key="annotations.reader.class">Doctrine\Common\Annotations\AnnotationReader</parameter>
+        <parameter key="annotations.cached_reader.class">Doctrine\Common\Annotations\CachedReader</parameter>
+        <parameter key="annotations.file_cache_reader.class">Doctrine\Common\Annotations\FileCacheReader</parameter>
     </parameters>
 
     <services>
@@ -26,5 +30,21 @@
         <service id="mvs_sample.productbizmodel" class="%mvs_sample.productbizmodel.class%">
             <argument type="service" id="mvs_sample.productrepository" />
         </service>
+
+        <service id="annotations.reader" class="%annotations.reader.class%" public="false" />
+
+        <service id="annotations.cached_reader" class="%annotations.cached_reader.class%" public="false">
+            <argument type="service" id="annotations.reader" />
+            <argument /><!-- Cache Implementation -->
+            <argument /><!-- Debug-Flag -->
+        </service>
+
+        <service id="annotations.file_cache_reader" class="%annotations.file_cache_reader.class%" public="false">
+            <argument type="service" id="annotations.reader" />
+            <argument /><!-- Cache-Directory -->
+            <argument /><!-- Debug Flag -->
+        </service>
+
+        <service id="annotation_reader" alias="annotations.reader" />
     </services>
 </container>
