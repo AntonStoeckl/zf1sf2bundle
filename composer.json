@@ -4,7 +4,9 @@
     "type": "project",
     "description": "Test bundle to be integrated into a ZF1 project",
     "autoload": {
-        "psr-0": { "": "src/" }
+        "psr-0": {
+            "Mvs": "src/"
+        }
     },
     "require": {
         "php": ">=5.4.6",
