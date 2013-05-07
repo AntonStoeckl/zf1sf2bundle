@@ -9,8 +9,8 @@ dirname(dirname(dirname(__DIR__)));
 require_once 'vendor/autoload.php';
 
 //load SF2 App Kernel
-require_once 'tests/SF2AppKernel.php';
-$kernel = new SF2AppKernel('development', true);
+require_once 'tests/AppKernel.php';
+$kernel = new AppKernel('development', true);
 $kernel->loadClassCache();
 
 //initialize Bundles and Container
