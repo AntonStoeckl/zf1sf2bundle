@@ -6,7 +6,7 @@
 dirname(dirname(dirname(__DIR__)));
 
 // Setup autoloading
-require_once 'vendor/autoload.php';
+$loader = require_once 'tests/autoload.php';
 
 //load SF2 App Kernel
 require_once 'tests/AppKernel.php';
@@ -17,3 +17,7 @@ $kernel->loadClassCache();
 $kernel->boot();
 
 $SF2Container = $kernel->getContainer();
+
+$bizModel = $SF2Container->get('mvs_sample.productbizmodel');
+$products = $bizModel->findAll();
+var_dump($products);
