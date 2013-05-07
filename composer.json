@@ -5,7 +5,7 @@
     "description": "Test bundle to be integrated into a ZF1 project",
     "autoload": {
         "psr-0": {
-            "Mvs": "src/"
+            "Mvs\\SampleBundle": "src/"
         }
     },
     "require": {
