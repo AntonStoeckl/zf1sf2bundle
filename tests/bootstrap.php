@@ -3,7 +3,7 @@
  * This makes our life easier when dealing with paths.
  * Everything is relative to the application root now.
  */
-dirname(dirname(dirname(__DIR__)));
+chdir(dirname(__DIR__));
 
 // Setup autoloading
 $loader = require_once 'tests/autoload.php';
